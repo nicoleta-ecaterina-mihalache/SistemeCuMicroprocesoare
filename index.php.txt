@@ -1,0 +1,51 @@
+<html>
+        <head>
+                <?php
+                #executia script-ului pentru butonul ON Fan
+                if (isset($_POST['buttonOn']))
+                {
+                        exec('sudo python /var/www/buttonOn.py');
+                }
+                #executia script-ului pentru butonul OFF Fan
+                if (isset($_POST['buttonOff']))
+                {
+                        exec('sudo python /var/www/buttonOff.py');
+                }
+                #executia script-ului pentru trimiterea mail-ului
+                if (isset($_POST['mail']))
+                {
+                        exec('sudo python /var/www/mail.py');
+                }
+                ?>
+
+                <title>Proiect SM</title>
+        </head>
+
+        <body style="background-color:lightblue;">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <center>
+                <table witdh="400" border="1" bgcolor="silver">
+                        <td>
+                        <Font color='navy'><b>
+                        <center>
+                        <h2>Room temperature and humidity</h2>
+                        </Font><b>
+                        <center>
+                        <h2> <Font color='navy'> Proiect SM
+                        </h2></font>
+                        <center>
+                        <br>
+                        <form method="post">
+                                 <!--declararea celor 3 butoane-->
+                                 <button style="text-align: center;" name="buttonOn"><font color="green"><b>ON Fan</button>&ensp;&ensp;&ensp;&ensp;
+                                 <button style="text-align: center;" name="buttonOff"><font color="red"><b>OFF Fan</button>&ensp;&ensp;&ensp;&ensp;
+                                 <button style="text-align: center;" name="mail"><font color="blue"><b>Send mail</button>
+                        </form>
+                        <font color="navy">
+                        <br>
+                        </td>
+                </table><br>
+                &copy 2021 Mihalache Nicoleta-Ecaterina<br>
+                Facultatea de Automatica si Calculatoare Iasi
+        </body>
+</html>
